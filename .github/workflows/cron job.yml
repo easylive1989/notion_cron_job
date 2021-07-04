@@ -6,12 +6,12 @@ on:
   push:
     branches:
       - master
-      
+
 env:
   NOTION_BOT_TOKEN: ${{ secrets.NOTION_BOT_TOKEN }}
   
 jobs:
-  docker:
+  update-areas-level-percentage:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -21,5 +21,6 @@ jobs:
         python-version: 3.8 #install the python needed
     - name: unit-test
       run: |
+        pip install requests
         python update_note_percetage.py $NOTION_BOT_TOKEN
     
