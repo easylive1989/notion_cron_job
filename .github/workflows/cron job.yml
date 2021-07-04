@@ -3,7 +3,10 @@ name: cron job
 on:
   schedule:
     - cron: "0 0 * * *"
-
+  push:
+    branches:
+      - master
+      
 env:
   NOTION_BOT_TOKEN: ${{ secrets.NOTION_BOT_TOKEN }}
   
