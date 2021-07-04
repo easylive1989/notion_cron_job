@@ -1,0 +1,22 @@
+name: cron job
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+env:
+  NOTION_BOT_TOKEN: ${{ secrets.NOTION_BOT_TOKEN }}
+  
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: setup
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8 #install the python needed
+    - name: unit-test
+      run: |
+        python update_note_percetage.py NOTION_BOT_TOKEN
+    
