@@ -22,6 +22,7 @@ jobs:
     - name: run jobs
       run: |
         pip install requests
-        python update_note_percetage.py $NOTION_BOT_TOKEN
-        python add_today_to_habit_lit.py $NOTION_BOT_TOKEN
+        for filename in *.py; do
+          python "$filename" $NOTION_BOT_TOKEN
+        done
     
