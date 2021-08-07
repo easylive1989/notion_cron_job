@@ -22,5 +22,5 @@ jobs:
     - name: run jobs
       run: |
         pip install requests
-        python main.py $NOTION_BOT_TOKEN
+        python main.py $NOTION_BOT_TOKEN $DATABASE_LIST
     
