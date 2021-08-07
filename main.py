@@ -1,7 +1,8 @@
 import sys
 import json
 from repository.notion_api import NotionApi
-from repository.habit_repository import HabitRepository, TodoListRepository
+from repository.habit_repository import HabitRepository
+from repository.todo_list_repository import TodoListRepository
 from habit_app import HabitApp
 
 
