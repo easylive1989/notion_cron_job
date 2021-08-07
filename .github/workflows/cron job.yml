@@ -22,7 +22,5 @@ jobs:
     - name: run jobs
       run: |
         pip install requests
-        for filename in *.py; do
-          python "$filename" $NOTION_BOT_TOKEN
-        done
+        python main.py $NOTION_BOT_TOKEN
     
