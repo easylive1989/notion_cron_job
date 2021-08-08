@@ -9,6 +9,7 @@ on:
 
 env:
   NOTION_BOT_TOKEN: ${{ secrets.NOTION_BOT_TOKEN }}
+  DATABASE_LIST: ${{ secrets.DATABASE_LIST }}
   
 jobs:
   update-areas-level-percentage:
@@ -18,9 +19,9 @@ jobs:
     - name: setup
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8 #install the python needed
+        python-version: 3.9
     - name: run jobs
       run: |
         pip install requests
-        python main.py $NOTION_BOT_TOKEN $DATABASE_LIST
+        python main.py "$NOTION_BOT_TOKEN" "$DATABASE_LIST"
     
