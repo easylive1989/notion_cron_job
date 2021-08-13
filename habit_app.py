@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from repository.habit_repository import HabitRepository
 
 class HabitApp:
@@ -6,5 +6,5 @@ class HabitApp:
         self.notion_repository = notion_repository
 
     def add_toady(self):
-        today = datetime.today()
+        today = datetime.today() + timedelta(hours = 8)
         self.notion_repository.add(today.strftime("%A"), today)
