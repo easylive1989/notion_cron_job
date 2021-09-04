@@ -13,10 +13,10 @@ class NotionApi:
             headers = self.__header()
         )
 
-    def patch_page(self, page_id: str, property: dict):
-        result = requests.patch(
-            f"https://api.notion.com/v1/pages/{page_id}", 
-            data = json.dumps(body),
+    def patch_page(self, page_id: str, properties: dict):
+        requests.patch(
+            f"https://api.notion.com/v1/pages/{page_id}",
+            data = json.dumps(properties),
             headers = self.__header()
         )
 
